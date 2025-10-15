@@ -38,11 +38,11 @@ public class ConsoleView {
     }
 
     public void displayMenu() {
-        System.out.println("Password Vault Menu:");
-        System.out.println("1. Add Password Entry");
-        System.out.println("2. View Password Entries");
-        System.out.println("3. Exit");
-        System.out.print("Choose an option: ");
+        displayMessage("Password Vault Menu:");
+        displayMessage("1. Add Password Entry");
+        displayMessage("2. View Password Entries");
+        displayMessage("3. Exit");
+        displayMessage("Choose an option: ");
     }
 
     public String getUserInput() {
