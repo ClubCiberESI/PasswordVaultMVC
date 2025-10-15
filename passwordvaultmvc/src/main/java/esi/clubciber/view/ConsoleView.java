@@ -1,32 +1,60 @@
 package esi.clubciber.view;
 
+import java.util.Scanner;
+
 public class ConsoleView {
-    // TODO: Add field for Scanner
-    // private Scanner scanner;
+    private Scanner scanner;
 
-    // TODO: Constructor
     public ConsoleView() {
-        // TODO: Initialize scanner
+        this.scanner = new Scanner(System.in);
     }
 
-    // TODO: Method to display menu
+    public void run() {
+        String option;
+
+        //TODO: login user
+
+        do {
+            displayMenu();
+            option = getUserInput();
+            switch (option) {
+                case "1":
+                    // TODO: Add password entry
+                    displayMessage("Adding password entry...");
+                    break;
+                case "2":
+                    // TODO: View password entries
+                    displayMessage("Viewing password entries...");
+                    break;
+                case "3":
+                    //TODO: logout user
+                    displayMessage("Exiting...");
+                    break;
+                default:
+                    displayMessage("Invalid option. Try again.");
+                    break;
+            }
+        } while (!"3".equals(option));
+    }
+
     public void displayMenu() {
-        // TODO: Print menu options
+        System.out.println("Password Vault Menu:");
+        System.out.println("1. Add Password Entry");
+        System.out.println("2. View Password Entries");
+        System.out.println("3. Exit");
+        System.out.print("Choose an option: ");
     }
 
-    // TODO: Method to get user input
     public String getUserInput() {
-        // TODO: Read input from scanner
-        return null;
+        return scanner.nextLine();
     }
 
-    // TODO: Method to display password entries
     public void displayPasswordEntries() {
-        // TODO: Print entries
+        // TODO: Implement display logic
+        displayMessage("Displaying entries...");
     }
 
-    // TODO: Method to display message
     public void displayMessage(String message) {
-        // TODO: Print message
+        System.out.println(message);
     }
 }

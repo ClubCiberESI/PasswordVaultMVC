@@ -2,6 +2,7 @@ package esi.clubciber;
 
 import java.io.InputStream;
 import java.util.Properties;
+import esi.clubciber.view.ConsoleView;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,12 +13,11 @@ public class Main {
                 properties.load(input);
                 String viewType = properties.getProperty("view.type");
                 if ("Cli".equals(viewType)) {
-                    // TODO: Launch CliView
-                    System.out.println("Launching CLI View");
-                    // For now, just print
+                    ConsoleView consoleView = new ConsoleView();
+                    consoleView.run();
                 } else if ("Gui".equals(viewType)) {
                     // TODO: Launch GuiView
-                    Throw new UnsupportedOperationException("GUI View not implemented yet");
+                    System.out.println("Launching GUI View");
                 } else {
                     System.out.println("Unknown view type");
                 }
